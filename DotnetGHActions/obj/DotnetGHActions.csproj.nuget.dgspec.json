@@ -1,0 +1,65 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/mmisztal/Projects/@cloud-tek/dotnet-github-actions/DotnetGHActions/DotnetGHActions.csproj": {}
+  },
+  "projects": {
+    "/Users/mmisztal/Projects/@cloud-tek/dotnet-github-actions/DotnetGHActions/DotnetGHActions.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mmisztal/Projects/@cloud-tek/dotnet-github-actions/DotnetGHActions/DotnetGHActions.csproj",
+        "projectName": "DotnetGHActions",
+        "projectPath": "/Users/mmisztal/Projects/@cloud-tek/dotnet-github-actions/DotnetGHActions/DotnetGHActions.csproj",
+        "packagesPath": "/Users/mmisztal/.nuget/packages/",
+        "outputPath": "/Users/mmisztal/Projects/@cloud-tek/dotnet-github-actions/DotnetGHActions/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/mmisztal/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/cloud-technologies/_packaging/nuget.cloud-technologies.net/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
