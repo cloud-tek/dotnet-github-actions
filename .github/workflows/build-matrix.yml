@@ -19,6 +19,11 @@ jobs:
     - run: dotnet restore
       name: dotnet restore
       working-directory: ./DotnetGHActions
-    - run: dotnet build --no-restore
+    - run: dotnet build --no-restore --framework net5.0
+      if: matrix.netcore-version == 5.0.101
+      name: dotnet build
+      working-directory: ./DotnetGHActions
+    - run: dotnet build --no-restore --framework netcoreapp3.1
+      if: matrix.netcore-version == 3.1.103
       name: dotnet build
       working-directory: ./DotnetGHActions
