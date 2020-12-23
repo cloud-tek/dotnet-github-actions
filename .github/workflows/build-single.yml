@@ -22,3 +22,50 @@ jobs:
     - run: dotnet build --no-restore
       name: dotnet build
       working-directory: ./DotnetGHActions
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      name: checkout
+    - uses: actions/setup-dotnet@v1
+      name: dotnet installer
+      with:
+        dotnet-version: ${{ env.NETCORE_VERSION }}
+    - run: dotnet add package LiquidTestReports.Markdown --version 1.0.9
+      name: dotnet add package LiquidTestReports.Markdown
+      working-directory: ./DotnetGHActions.Tests
+    - run: dotnet restore
+      name: dotnet restore
+      working-directory: ./DotnetGHActions.Tests
+    - name: set pr build number
+      id: PRNUMBER
+      if: ${{ github.event_name == 'pull_request' }}
+      uses: kkak10/pr-number-action@v1.3
+      # set report file and title 
+    - name: set test title
+      run: | 
+        if ${{ github.event_name == 'pull_request' }}
+        then
+          echo "::set-env name=title::Test Run for PR #${{steps.PRNUMBER.outputs.pr}} (${{github.run_number}})"
+          echo "::set-env name=file_name::TestReport.${{steps.PRNUMBER.outputs.pr}}.${{github.run_number}}.md"
+        else
+          echo "::set-env name=title::Test Run ${{github.run_number}}"
+          echo "::set-env name=file_name::TestReport.${{github.run_number}}.md"
+        fi
+    - run: dotnet test
+      name: dotnet test --logger:"liquid.md;LogFileName=${{github.workspace}}/${{env.file_name}};Title=${{env.title}};"
+      working-directory: ./DotnetGHActions.Tests
+    - name: upload build artifact
+      uses: actions/upload-artifact@v2
+      if: ${{always()}}
+      with:
+        name: 'Test Run'
+        path: ${{github.workspace}}/${{env.file_name}}
+    - name: comment PR
+      uses: machine-learning-apps/pr-comment@master
+      if: ${{ github.event_name == 'pull_request' }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        path: ${{env.file_name}}
