@@ -8,22 +8,21 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix: 
-        netcore-version: [3.1.103, 5.0.101]
+        net: 
+        - framework: net5.0
+          sdk: 5.0.101
+        - framework: netcoreapp3.1
+          sdk: 3.1.103
     steps:
     - uses: actions/checkout@v2
       name: checkout
     - uses: actions/setup-dotnet@v1
       name: dotnet installer
       with:
-        dotnet-version: ${{ matrix.netcore-version }}
+        dotnet-version: ${{ matrix.net.sdk }}
     - run: dotnet restore
       name: dotnet restore
       working-directory: ./DotnetGHActions
-    - run: dotnet build --no-restore --framework net5.0
-      if: matrix.netcore-version == '5.0.101'
-      name: dotnet build
-      working-directory: ./DotnetGHActions
-    - run: dotnet build --no-restore --framework netcoreapp3.1
-      if: matrix.netcore-version == '3.1.103'
+    - run: dotnet build --no-restore --framework ${{ matrix.net.framework }}
       name: dotnet build
       working-directory: ./DotnetGHActions
