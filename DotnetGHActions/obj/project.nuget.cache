@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lFZxj5HxNpddzbQlrquhDlOCZ2cmCdQJIy05IWJbnDaCB8zlanakDOSXe01yA0eYLgEQqDiDBGbIldYqOURUQQ==",
+  "dgSpecHash": "VIZ1op6K7EE0ppxaMyaMgpBUM4PmbGs+6j5AOmNs4yCwU/m6y8OFgVrodnFM4V1T0jDXlG8oD8UX4ckORkDb+w==",
   "success": true,
-  "projectFilePath": "/Users/mmisztal/Projects/@cloud-tek/dotnet-github-actions/DotnetGHActions/DotnetGHActions.csproj",
+  "projectFilePath": "D:\\Checkout\\@cloudtek\\dotnet-github-actions\\DotnetGHActions\\DotnetGHActions.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

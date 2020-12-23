@@ -1,33 +1,44 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mmisztal/Projects/@cloud-tek/dotnet-github-actions/DotnetGHActions/DotnetGHActions.csproj": {}
+    "D:\\Checkout\\@cloudtek\\dotnet-github-actions\\DotnetGHActions\\DotnetGHActions.csproj": {}
   },
   "projects": {
-    "/Users/mmisztal/Projects/@cloud-tek/dotnet-github-actions/DotnetGHActions/DotnetGHActions.csproj": {
+    "D:\\Checkout\\@cloudtek\\dotnet-github-actions\\DotnetGHActions\\DotnetGHActions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mmisztal/Projects/@cloud-tek/dotnet-github-actions/DotnetGHActions/DotnetGHActions.csproj",
+        "projectUniqueName": "D:\\Checkout\\@cloudtek\\dotnet-github-actions\\DotnetGHActions\\DotnetGHActions.csproj",
         "projectName": "DotnetGHActions",
-        "projectPath": "/Users/mmisztal/Projects/@cloud-tek/dotnet-github-actions/DotnetGHActions/DotnetGHActions.csproj",
-        "packagesPath": "/Users/mmisztal/.nuget/packages/",
-        "outputPath": "/Users/mmisztal/Projects/@cloud-tek/dotnet-github-actions/DotnetGHActions/obj/",
+        "projectPath": "D:\\Checkout\\@cloudtek\\dotnet-github-actions\\DotnetGHActions\\DotnetGHActions.csproj",
+        "packagesPath": "C:\\Users\\mmisztal\\.nuget\\packages\\",
+        "outputPath": "D:\\Checkout\\@cloudtek\\dotnet-github-actions\\DotnetGHActions\\obj\\",
         "projectStyle": "PackageReference",
+        "crossTargeting": true,
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/mmisztal/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\mmisztal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
+          "net5.0",
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/cloud-technologies/_packaging/nuget.cloud-technologies.net/nuget/v3/index.json": {}
+          "https://pkgs.dev.azure.com/cloud-tek/_packaging/nuget.cloudtek.io/nuget/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          },
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -39,6 +50,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -57,7 +69,29 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        },
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

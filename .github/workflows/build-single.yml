@@ -55,7 +55,7 @@ jobs:
           echo "::set-env name=file_name::TestReport.${{github.run_number}}.md"
         fi
     - run: dotnet test
-      name: dotnet test --logger:"liquid.md;LogFileName=${{github.workspace}}/${{env.file_name}};Title=${{env.title}};"
+      name: dotnet test --framework net5.0 --logger:"liquid.md;LogFileName=${{github.workspace}}/${{env.file_name}};Title=${{env.title}};"
       working-directory: ./DotnetGHActions.Tests
     - name: upload build artifact
       uses: actions/upload-artifact@v2
