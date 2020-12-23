@@ -3,7 +3,7 @@ name: DotNetGHActions Build
 env:
   NETCORE_VERSION: 5.0.101
 
-on: ['push']
+on: ['push', 'workflow_dispatch']
 
 jobs:
   build:
