@@ -2,6 +2,7 @@ name: DotNetGHActions Build
 
 env:
   NETCORE_VERSION: 5.0.101
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
 on: ['push', 'workflow_dispatch']
 
