@@ -1,4 +1,4 @@
-name: DotNetGHActions Build
+name: DotNetGHActions Matrix Build
 
 on: ['push']
 
