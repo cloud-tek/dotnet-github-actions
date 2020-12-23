@@ -1,7 +1,7 @@
 name: DotNetGHActions Build
 
 env:
-  NETCORE_VERSION: 5.0.101
+  NETCORE_VERSION: 3.1.103
 
 on: ['push']
 
