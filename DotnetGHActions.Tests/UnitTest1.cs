@@ -31,7 +31,7 @@ namespace DotnetGHActions.Tests
         [InlineData(5)]
         public void Test4(int x)
         {
-
+            x.GetType();
         }
     }
 }
