@@ -1,6 +1,12 @@
 name: DotNetGHActions Matrix Build
 
-on: ['push', 'workflow_dispatch']
+on:
+  push:
+    paths:
+      - ".github/workflows/build-matrix.yml"
+      - "DotnetGHActions/*"
+      - "DotnetGHActions.Tests/*"
+  workflow_dispatch:
 
 jobs:
   build:

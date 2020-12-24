@@ -4,7 +4,14 @@ env:
   NETCORE_VERSION: 5.0.101
   ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
-on: ['push', 'workflow_dispatch']
+on:
+  push:
+    paths:
+      - ".github/workflows/build-single.yml"
+      - "DotnetGHActions/*"
+      - "DotnetGHActions.Tests/*"
+  workflow_dispatch:
+# ['push', 'workflow_dispatch']
 
 jobs:
   build:
