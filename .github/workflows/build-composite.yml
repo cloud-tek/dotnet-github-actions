@@ -29,9 +29,23 @@ jobs:
       name: dotnet installer
       with:
         dotnet-version: ${{ matrix.net.sdk }}
-    - uses: cloud-tek/dotnet-composite-github-actions/dotnet-project-build-n-test@v4
+    - id: dotnet_composite
+      uses: cloud-tek/dotnet-composite-github-actions/dotnet-project-build-n-test@v5
       name: composite-sample
       with:
         framework: ${{ matrix.net.framework }}
         projectDirectory: ${{ github.workspace }}/DotnetGHActions
         testsDirectory: ${{ github.workspace }}/DotnetGHActions.Tests
+    - name: upload build artifact
+      uses: actions/upload-artifact@v2
+      if: ${{always()}}
+      with:
+        name: 'Test Run'
+        path: ${{ steps.dotnet_complsite.outputs.test-results }}
+    - name: comment PR
+      uses: machine-learning-apps/pr-comment@master
+      if: ${{ github.event_name == 'pull_request' }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        path: ${{ steps.dotnet_complsite.outputs.test-results }}
