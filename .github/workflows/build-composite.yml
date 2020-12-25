@@ -1,4 +1,4 @@
-name: DotNetGHActions Matrix Build
+name: DotNetGHActions Composite Matrix Build
 
 on:
   push:
