@@ -1,5 +1,8 @@
 name: DotNetGHActions Composite Matrix Build
 
+env:
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+
 on:
   push:
     paths:
