@@ -29,6 +29,6 @@ jobs:
     - uses: cloud-tek/dotnet-composite-github-actions/dotnet-project-build-n-test@v2
       name: composite-sample
       with:
-        framework: ${{ matrix.net.sdk }}
+        framework: ${{ matrix.net.framework }}
         projectDirectory: ${{ github.workspace }}/DotnetGHActions
         testsDirectory: ${{ github.workspace }}/DotnetGHActions.Tests
