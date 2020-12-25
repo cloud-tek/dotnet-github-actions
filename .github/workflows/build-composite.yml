@@ -41,7 +41,7 @@ jobs:
       if: ${{always()}}
       with:
         name: 'Test Run'
-        path: ${{ steps.dotnet_complsite.outputs.test-results }}
+        path: ${{ steps.dotnet_composite.outputs.test-results }}
     - name: comment PR
       uses: machine-learning-apps/pr-comment@master
       if: ${{ github.event_name == 'pull_request' }}
