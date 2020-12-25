@@ -1,0 +1,40 @@
+name: DotNetGHActions Matrix Build
+
+on:
+  push:
+    paths:
+      - ".github/workflows/build-composite.yml"
+      - "DotnetGHActions/*"
+      - "DotnetGHActions.Tests/*"
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: 
+        net: 
+        - framework: net5.0
+          sdk: 5.0.101
+        - framework: netcoreapp3.1
+          sdk: 3.1.103
+    steps:
+    - uses: actions/checkout@v2
+      name: checkout
+    - uses: actions/setup-dotnet@v1
+      name: dotnet installer
+      with:
+        dotnet-version: ${{ matrix.net.sdk }}
+    - uses: cloud-tek/dotnet-composite-github-actions/dotnet-project-build-n-test@v1
+      name: 
+      with:
+        framework: ${{ matrix.net.sdk }}
+        projectDir: ./DotnetGHActions
+        testsDir: ./DotnetGHActions.Tests
+    # - run: dotnet restore
+    #   name: dotnet restore
+    #   working-directory: ./DotnetGHActions
+    # - run: dotnet build --no-restore --framework ${{ matrix.net.framework }}
+    #   name: dotnet build
+    #   working-directory: ./DotnetGHActions
